@@ -1,0 +1,57 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+	<div class="navbar-inner">
+	    <div class="container">
+          <h6> BORÇ TAKİP</h6>
+           <nav>
+  			 	<ul class="nav pull-right">
+     			
+    			  <li><%= link_to "Help", help_path %></li>
+				  <% if user_signed_in? %>
+				  <% else %>
+				 <li> <%= link_to "Login", new_user_session_path %></li>
+				  <% end %>
+   		   		</ul>
+ 		   </nav>
+	   </div>
+	   </div>
+</header>
+
+<body>
+
+<% if user_signed_in? %>
+ Logged in as <strong><%= current_user.email %></strong>.
+ <%= link_to 'Home' , debts_path  %> |
+ <%= link_to 'Edit profile', edit_user_registration_path %> |
+ <%= link_to 'Authentications', authentications_path %> |
+  <%= link_to 'Debts', debts_path %> |
+ <%= link_to "Friends", friends_path %> |
+ <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+   <%= render 'shared/user_info' %>
+<% else %>
+
+<div class="center hero-unit">
+	 <h1>BORÇ TAKİP SİTESİNE HOŞGELDİNİZ</h1></br>
+	 <h3>Siteye Giriş yaparak borçlarınızı takip etmeye hemen başlayabilirsiniz.</h3></br>
+	 
+   <%= link_to "Sign up", new_user_registration_path %> |
+   <%= link_to "Login", new_user_session_path %>
+ 
+ <li><%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %></li>
+ <li><%= link_to "Twitter", user_omniauth_authorize_path(:twitter) %></li>
+<% end %>
+
+
+
+ <div class="center hero-unit">
+ </body>
+	 <footer class="footer">
+  
+	   <nav>
+	     <ul>
+	 	   <li><%= link_to "Contact",    contact_path %></li>
+	 	  <li><%= link_to "About",    about_path %></li></br>
+      
+	     </ul>
+	   </nav>
+	 </footer>
+	 

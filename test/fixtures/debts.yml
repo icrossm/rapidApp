@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  friend_id: 1
+  amount: 1
+  type: 1
+  expirity: 2014-01-11
+  status: 1
+
+two:
+  friend_id: 1
+  amount: 1
+  type: 1
+  expirity: 2014-01-11
+  status: 1

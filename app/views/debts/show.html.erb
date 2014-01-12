@@ -1,0 +1,29 @@
+<%= render 'shared/form' %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Friend:</strong>
+  <%= Friend.find(@debt.friend_id).name %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @debt.amount %>
+</p>
+
+<p>
+  
+</p>
+
+<p>
+  <strong>Expirity:</strong>
+  <%= @debt.expirity %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @debt.status %>
+</p>
+
+<%= link_to 'Edit', edit_debt_path(@debt) %> |
+<%= link_to 'Back', debts_path %>
